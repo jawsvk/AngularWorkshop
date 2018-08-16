@@ -1,0 +1,38 @@
+<p>
+  My Address Book
+</p>
+
+<div class="form-container">
+  <form (ngSubmit) = "processForm()" #contactForm = "ngForm">
+  <table>
+    <tr>
+        <mat-form-field>
+            <input type="text" matInput placeholder="Name" name="Name" ngModel required>
+        </mat-form-field>
+
+    </tr>
+      <tr>
+         <mat-form-field>
+            <input type="email" name="Email" placeholder="Your email" matInput #EmailField="ngModel" required email ngModel>
+
+            <mat-error *ngIf="EmailField.hasError('email') && !EmailField.hasError('required')">
+                Please enter a valid email address
+                </mat-error>
+                 <mat-error *ngIf="EmailField.hasError('required')">
+                  Email is <strong>required</strong>
+                 </mat-error>
+          </mat-form-field>
+      </tr>
+       <tr>
+         <mat-form-field>
+           <input type="tel" matInput name="Phone"  placeholder="Your Phone Number" minlength="8" ngModel required >
+
+          </mat-form-field>
+       </tr>
+
+</table>
+<button mat-raised-button color="primary" type="submit" [disabled]="contactForm.invalid">Add</button>
+</form>
+
+</div>
+
