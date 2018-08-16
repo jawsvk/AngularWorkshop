@@ -1,0 +1,22 @@
+<!--The content below is only a placeholder and can be replaced.-->
+ <h1>GIF Gallery</h1>
+
+ <form #form="ngForm" (ngSubmit)="processForm()">
+ URL:
+ <input type= "text" name = "search" ngModel>
+ <button type ="submit">GET</button>
+ </form>
+
+
+ <mat-grid-list cols="5" rowHeight="250px">
+  <mat-grid-tile
+      *ngFor="let i of images"
+      [colspan]="1"
+      [rowspan]="1">
+
+
+  <img src="{{i.url}}" alt="">
+  </mat-grid-tile>
+</mat-grid-list>
+
+
