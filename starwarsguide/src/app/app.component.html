@@ -1,0 +1,15 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Star Wars
+  </h1>
+<mat-nav-list>
+  <mat-list-item *ngFor="let i of categories">
+    <button mat-button (click)=getList(i) >
+      {{i}}</button>
+  </mat-list-item>
+
+</mat-nav-list>
+
+
+

@@ -1,0 +1,17 @@
+{
+  "name": "popquiz",
+  "version": "1.0.0",
+  "description": "Exercise for node.js",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jawen Voon Kakiong",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "mongodb": "^3.1.3",
+    "prompt": "^1.0.0",
+    "request": "^2.88.0"
+  }
+}
