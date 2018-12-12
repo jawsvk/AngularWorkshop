@@ -6,7 +6,7 @@
 
   <mat-nav-list>
       <mat-list-item *ngFor="let item of generateArray(list)" (click)=getList(item.key)>
-       <a routerLink="category" [class.activated]="currentUrl == '/category'">{{item.key | titlecase}}</a>
+       {{item.key | titlecase}}
       </mat-list-item>
   </mat-nav-list>
 

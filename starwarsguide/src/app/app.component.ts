@@ -36,6 +36,7 @@ export class AppComponent implements OnInit {
 getList(k: string ) {
 
   console.log('is me ' + k);
+  this.router.navigate(['/'+ k])
 }
 
 generateArray(obj){
