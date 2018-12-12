@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from './data.service'
 import { Observable } from 'rxjs';
+import { map, filter, catchError, mergeMap } from 'rxjs/operators';
 
 
 @Component({
@@ -11,10 +12,9 @@ import { Observable } from 'rxjs';
 export class AppComponent implements OnInit {
 
   title = 'starwarsguide';
-  list: Object;
+  list: Object = new Object();
 
- 
-  
+
   categories: string [] = ['people', 'films', 'species', 'starships', 'vehicles', 'planets'];
   constructor(private data: DataService) {}
 
@@ -26,11 +26,9 @@ export class AppComponent implements OnInit {
     () => console.log('done loading menu items')
    
    );
-
-  // console.log(JSON.stringify(this.list));
+   
 
 }
-
 
 getList(k: string ) {
 

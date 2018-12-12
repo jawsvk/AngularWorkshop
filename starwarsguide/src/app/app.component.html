@@ -3,15 +3,14 @@
   <h1>
     Star Wars
   </h1>
-<mat-nav-list>
-  <mat-list-item *ngFor="let i of categories">
-    <button mat-button (click)=getList(i) >
-      {{i}}</button>
-  </mat-list-item>
 
-</mat-nav-list>
+  <mat-nav-list>
+      <mat-list-item *ngFor="let item of generateArray(list)" (click)=getList(item.key)>{{item.key | titlecase}}</mat-list-item>
+  </mat-nav-list>
 
-<li *ngFor="let item of generateArray(list)">{{item.key}}: {{item.value}}</li>
+</div>
+
+
 
 
 
