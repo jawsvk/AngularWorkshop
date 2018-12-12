@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from './data.service'
-import { Observable } from 'rxjs';
-import { map, filter, catchError, mergeMap } from 'rxjs/operators';
+import {Router, NavigationEnd} from '@angular/router';
+
 
 
 @Component({
@@ -12,11 +12,14 @@ import { map, filter, catchError, mergeMap } from 'rxjs/operators';
 export class AppComponent implements OnInit {
 
   title = 'starwarsguide';
+  currentUrl: string;
   list: Object = new Object();
 
 
-  categories: string [] = ['people', 'films', 'species', 'starships', 'vehicles', 'planets'];
-  constructor(private data: DataService) {}
+  constructor(private data: DataService, private router: Router) {
+    router.events.subscribe((_: NavigationEnd) => this.currentUrl = this.router.url
+    );
+  }
 
   ngOnInit() {
    
