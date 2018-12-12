@@ -5,6 +5,9 @@ import { MaterialModule } from './material.module';
 import { AppComponent } from './app.component';
 import { CategoryComponent } from './category/category.component';
 import { DetailComponent } from './detail/detail.component';
+import {DataService} from './data.service';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -13,9 +16,9 @@ import { DetailComponent } from './detail/detail.component';
     DetailComponent
   ],
   imports: [
-    BrowserModule, BrowserAnimationsModule, MaterialModule
+    BrowserModule, BrowserAnimationsModule, MaterialModule, HttpClientModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
