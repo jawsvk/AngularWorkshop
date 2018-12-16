@@ -21,7 +21,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MaterialModule, 
+    MaterialModule,
     HttpClientModule,
     AppRoutingModule
   ],

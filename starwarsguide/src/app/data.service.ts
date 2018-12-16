@@ -12,11 +12,10 @@ export class DataService {
 
   constructor(private http: HttpClient) {}
 
-  getListItems(content)
-  {
+  getListItems(content) {
     const qs = new HttpParams()
       .set('q', content);
-      console.log('getting list items for '+content)
+      console.log('getting list items for ' + content);
       return(
         this.http.get<string[]>('https://swapi.co/api', {params: qs})
         .toPromise()
@@ -29,9 +28,8 @@ export class DataService {
   }
 
   getList() {
-    return(this.http.get('https://swapi.co/api/?format=json'))
-      
-    
+    return(this.http.get('https://swapi.co/api/?format=json'));
+
   }
 
 }

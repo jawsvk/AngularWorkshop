@@ -1,9 +1,9 @@
-<p>
-  category works!
-</p>
+<div class='title'  style="text-align:center">
+  <h2>{{categoryname | titlecase}}</h2>
+</div>
 
 <mat-nav-list class="categorieslist">
-    <h3 mat-subheader>List Title</h3>
+
   <mat-list-item *ngFor="let i of categories" > {{i}}</mat-list-item>
 
 </mat-nav-list>

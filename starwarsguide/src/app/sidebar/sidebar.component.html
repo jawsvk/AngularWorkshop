@@ -1,3 +1,9 @@
-<p>
-  sidebar works!
-</p>
+<div style="text-align:center">
+
+  <mat-nav-list>
+      <mat-list-item *ngFor="let item of generateArray(list)" (click)=getList(item.key)>
+       {{item.key | titlecase}}
+      </mat-list-item>
+  </mat-nav-list>
+
+</div>
