@@ -13,16 +13,20 @@ export class DataService {
   constructor(private http: HttpClient) {}
 
   getListItems(content) {
-    const qs = new HttpParams()
-      .set('q', content);
+   /*  const qs = new HttpParams()
+      .set('q', content); */
       console.log('getting list items for ' + content);
       return(
-        this.http.get<string[]>('https://swapi.co/api', {params: qs})
+        this.http.get<string[]>('https://swapi.co/api/'+ content)
         .toPromise()
         .then((result) => {
           const k: string[] = [];
+          for(const i of result['results']) {
+            k.push(i.name);
 
+          }
 
+          return (k);
         })
       );
   }

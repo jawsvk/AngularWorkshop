@@ -9,14 +9,10 @@ export class AppComponent {
 
   title = 'starwarsguide';
 
-
-
   constructor() {
 
   }
 
 
-
 }
 
-}
