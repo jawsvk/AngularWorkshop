@@ -4,7 +4,10 @@
 
 <mat-nav-list class="categorieslist">
 
-  <mat-list-item *ngFor="let i of categories" > {{i}}</mat-list-item>
+  <mat-list-item *ngFor="let i of results">
+    <a [routerLink]="['/'+ categoryname + '/'+ i.title| lowercase]" routerLinkActive="router-link-active" >{{i.title}}</a>
+
+  </mat-list-item>
 
 </mat-nav-list>
 

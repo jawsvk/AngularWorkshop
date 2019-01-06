@@ -6,6 +6,13 @@ const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
+export interface ItemData {
+  url: string;
+  title: string;
+
+}
+
+
 @Injectable()
 export class DataService {
 
@@ -20,9 +27,18 @@ export class DataService {
         this.http.get<string[]>('https://swapi.co/api/'+ content)
         .toPromise()
         .then((result) => {
-          const k: string[] = [];
+          const k: ItemData[] = [];
+          var label: string;
           for(const i of result['results']) {
-            k.push(i.name);
+            if(i.name != null){
+              label = i.name;
+            }
+            else { label = i.title};
+
+            k.push({
+              url: i.url,
+              title: label
+            });
 
           }
 

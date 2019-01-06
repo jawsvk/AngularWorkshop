@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {DataService} from '../data.service';
+import {DataService, ItemData} from '../data.service';
 import {Router, ActivatedRoute, NavigationEnd} from '@angular/router';
 import { Observable } from 'rxjs';
 
@@ -13,11 +13,11 @@ import { Observable } from 'rxjs';
 })
 export class CategoryComponent implements OnInit {
 
-  results: string[];
+  results: ItemData[];
   categoryname: string;
   currentUrl:string;
 
-  constructor(private data: DataService, private route: ActivatedRoute, private router: Router  ) { 
+  constructor(private data: DataService, private route: ActivatedRoute, private router: Router  ) {
     router.events.subscribe((_: NavigationEnd) => this.currentUrl = this.router.url
     );
   }
@@ -26,7 +26,7 @@ export class CategoryComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe( params => this.categoryname = this.route.snapshot.params['category']);
-    this.data.getListItems(this.categoryname).then((result: string[]) => {
+    this.data.getListItems(this.categoryname).then((result: ItemData[]) => {
     this.results = result;
     console.log(this.results);
 
